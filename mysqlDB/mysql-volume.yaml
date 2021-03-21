@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mysql-pv-claim
-  namespace: gruppe1
+  namespace: gruppe12
   labels:
     app: mysqldb
 spec:
