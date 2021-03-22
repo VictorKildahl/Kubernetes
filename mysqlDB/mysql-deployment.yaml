@@ -17,13 +17,15 @@ spec:
     spec:
       containers:
         - name: mysqldb
-          image: mysql:8.0.0
+          image: mysql:5.6
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mysql-secret
                   key: mysql-root-password
+            - name: DBHOST
+              value: mysql-service.gruppe12.svc
           ports:
             - containerPort: 3306
               name: mysql

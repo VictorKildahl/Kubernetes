@@ -18,8 +18,17 @@ spec:
       containers:
         - name: testback
           image: victorkildahl/backend:1
-          # env:
-          # - name: DBHOST
-          #   value: 10.101.183.170
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: mysql-root-password
+          #env:
+          #  - name: DBHOST
+          #    value: mysql-service.gruppe12.svc.cluster.local
           ports:
             - containerPort: 80
