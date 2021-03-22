@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: mysqldb
-          image: mysql:5.6
+          image: mysql:latest
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
@@ -29,13 +29,13 @@ spec:
           ports:
             - containerPort: 3306
               name: mysql
-          resources:
-            limits:
-              cpu: 10m
-              memory: 0.2Gi
-            requests:
-              cpu: 10m
-              memory: 0.2Gi
+          #resources:
+          #  limits:
+          #    cpu: 10m
+          #    memory: 0.2Gi
+          #  requests:
+          #    cpu: 10m
+          #    memory: 0.2Gi
           volumeMounts:
             - name: mysql-persistent-storage
               mountPath: /var/lib/mysql
