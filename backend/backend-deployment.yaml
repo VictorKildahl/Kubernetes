@@ -27,8 +27,5 @@ spec:
                 secretKeyRef:
                   name: mysql-secret
                   key: mysql-root-password
-          #env:
-          #  - name: DBHOST
-          #    value: mysql-service.gruppe12.svc.cluster.local
           ports:
             - containerPort: 80
